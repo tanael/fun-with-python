@@ -3,3 +3,5 @@
 Cool and useful pythonic code relative to functions.
 
 ## Mutable defaults
+
+## Function arguments
