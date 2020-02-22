@@ -17,7 +17,7 @@ class Fibonacci:
         return fib
 
 def main():
-    print("\nLimited Fibonacci sequence:")
+    print("\nLimited Fibonacci sequence using a class:")
     for num in Fibonacci(500):
         print(num)
 
