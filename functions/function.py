@@ -16,6 +16,11 @@ def print_arguments(arg, *args, **kwargs):
     for key, value in kwargs.items():
         print("{} {}".format(key, value))
 
+def repeat(galaxyName, name='johnson', dogName='pegasus'):
+    print("That dog's name is {}".format(dogName))
+    print("That galaxy's name is {}".format(galaxyName))
+    print("That name is {}".format(name))
+
 def main():
     print(mutable_defaults("first"))
     print(mutable_defaults("second"))
@@ -30,6 +35,12 @@ def main():
     my_args = ['a', 2, True]
     my_kwargs = {"one": 1, "two": 2, "three": 3}
     print_arguments(">> arg", *my_args, **my_kwargs)
+
+    print()
+
+    my_dict = {"galaxyName": "andromeda", "dogName": "cerberus",
+            "name": "vega"}
+    repeat(**my_dict)
 
 
 if __name__ == "__main__":
