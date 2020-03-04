@@ -21,6 +21,24 @@ def repeat(galaxyName, name='johnson', dogName='pegasus'):
     print("That galaxy's name is {}".format(galaxyName))
     print("That name is {}".format(name))
 
+def wrapping():
+    wrapping_var = "wrapping var"
+
+    def wrapped():
+        return wrapping_var
+    return wrapped
+
+def counter():
+    count = 0
+    msg = "HALLO"
+
+    def tick():
+        nonlocal count
+        nonlocal msg
+        count += 1
+        return count
+    return tick
+
 def main():
     print(mutable_defaults("first"))
     print(mutable_defaults("second"))
@@ -41,6 +59,24 @@ def main():
     my_dict = {"galaxyName": "andromeda", "dogName": "cerberus",
             "name": "vega"}
     repeat(**my_dict)
+
+    print()
+    foo = wrapping()
+    print(foo)
+    print(foo())
+    cl = foo.__closure__
+    print(cl)
+    print(cl[0].cell_contents)
+    bar = counter()
+    print(bar)
+    print(bar())
+    print(bar())
+    print(bar())
+    print(bar())
+    cl = bar.__closure__
+    print(cl)
+    print(cl[0].cell_contents)
+    print(cl[1].cell_contents)
 
 
 if __name__ == "__main__":
