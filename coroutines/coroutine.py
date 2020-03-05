@@ -16,8 +16,12 @@ def print_tag(tag):
 
 def main():
     coro = print_tag("hyper")
-    caught = coro.__next__() # to start execution of coroutine, till the first yield
+
+    # You can either use __next__() or send a None value
+    # caught = coro.__next__() # to start execution of coroutine, till the first yield
+    caught = coro.send(None)
     print(">> 0 Caught this: {}".format(caught))
+
     caught = coro.send("space")
     print(">> 1 Caught this: {}".format(caught))
     caught = coro.send("hyperspace")
