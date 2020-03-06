@@ -39,6 +39,11 @@ def counter():
         return count
     return tick
 
+def fn_loader(loaded_arg):
+    def loaded_fn(arg):
+        print("{}: {}".format(loaded_arg, arg))
+    return loaded_fn
+
 def main():
     print(mutable_defaults("first"))
     print(mutable_defaults("second"))
@@ -77,6 +82,12 @@ def main():
     print(cl)
     print(cl[0].cell_contents)
     print(cl[1].cell_contents)
+
+    print()
+
+    foobar = fn_loader("foobarred")
+    foobar("hello")
+    foobar("goodbye")
 
 
 if __name__ == "__main__":
