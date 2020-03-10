@@ -37,3 +37,7 @@ There are three main types of awaitable objects:
 A `Future` is an **eventual result** of an asynchronous operation.
 
 `Futures` are needed to allow callback-based code.
+
+## Concurrent Tasks
+
+Awaitable objects are run concurrently.
